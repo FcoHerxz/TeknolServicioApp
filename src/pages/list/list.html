@@ -1,0 +1,35 @@
+<ion-header>
+ 
+  <ion-navbar>
+    <button ion-button menuToggle>
+        
+      <ion-icon name="menu"></ion-icon>
+    
+    </button>
+    
+    
+    <ion-title>Registros (Lista)</ion-title>
+    
+        
+  </ion-navbar>
+  <div style="text-align: right;width:335px">
+    <button ion-button round outline (click)="btnAgregar()" ><ion-icon ios="ios-add-circle" md="md-add"></ion-icon></button>
+    <button ion-button round outline (click)="btnrecargar()"> <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon></button>
+  </div>
+ 
+</ion-header>
+
+<ion-content>
+   
+  <ion-list>
+      
+    <ion-item *ngFor="let ubicacion of teknol; let i = index;">
+      <p><strong>{{ubicacion.ubicacion}}</strong> <br/> {{ubicacion.fecha}}</p>
+      <button ion-button item-right (click)="goUpdate(ubicacion.id)"><ion-icon name="color-wand"></ion-icon></button>
+      <button ion-button item-right color="danger" (click)="delete(ubicacion.id)"><ion-icon name="trash"></ion-icon></button>
+      
+    </ion-item>
+  </ion-list>
+  
+  
+</ion-content>

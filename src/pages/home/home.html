@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Registros</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-slides #mySlider (ionSlideDidChange)="onSlideChanged()">
+    <ion-slide *ngFor="let ubicacion of teknol; let i = index;">
+        <ion-card class="white-card">
+            <ion-card-header>
+              <h1>{{ubicacion.ubicacion}}</h1>
+              <h2>Tecnico: {{ubicacion.tecnico}}</h2>
+              <h2>Modelo: {{ubicacion.modelo}}</h2>
+              <h2>Problema: {{ubicacion.servicio}}</h2>
+              <h2>{{ubicacion.fecha}}</h2>
+            </ion-card-header>
+            <!--
+              <ion-card-content>
+                <button ion-button full (click)="openMap(i)" >Ver mapa</button>
+                    <div class ="google_map">
+                      <div [attr.id]="'map' + i" class="mapa"></div>
+                    </div>
+              </ion-card-content>  
+              -->
+
+        </ion-card>
+
+    </ion-slide>
+
+  </ion-slides> 
+</ion-content>
